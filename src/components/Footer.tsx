@@ -29,10 +29,14 @@ export default function Footer() {
                             <div className="relative">
                                 <input
                                     type="email"
+                                    suppressHydrationWarning
                                     placeholder="Get match invites & updates..."
                                     className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-6 pr-32 outline-none focus:border-padel-neon transition-colors text-white placeholder:text-white/20"
                                 />
-                                <button className="absolute right-2 top-2 bottom-2 bg-padel-neon text-padel-dark px-6 rounded-xl font-bold text-sm hover:bg-white hover:text-black transition-all">
+                                <button
+                                    suppressHydrationWarning
+                                    className="absolute right-2 top-2 bottom-2 bg-padel-neon text-padel-dark px-6 rounded-xl font-bold text-sm hover:bg-white hover:text-black transition-all"
+                                >
                                     Join
                                 </button>
                             </div>

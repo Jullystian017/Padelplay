@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Experience the future of padel booking and community in one sleek platform.",
 };
 
+import { AuthProvider } from "@/context/AuthContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,8 +28,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${inter.variable} ${outfit.variable} antialiased`}
+        suppressHydrationWarning
       >
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
