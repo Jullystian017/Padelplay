@@ -24,10 +24,7 @@
 - **Comprehensive Messages**: Includes customer name, court, date, time, add-ons, and total price
 - **No Payment Gateway**: Simplified booking flow with payment confirmation via WhatsApp
 
-### 🔐 Authentication (Optional)
-- **Supabase Auth**: Secure user authentication with email/password
-- **User Profiles**: Avatar support and personalized user menu
-- **Guest Booking**: Book courts without creating an account
+Book courts without creating an account
 
 ---
 
@@ -38,7 +35,6 @@
 - **Styling**: Tailwind CSS 4
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Authentication**: Supabase
 - **Deployment**: Vercel-ready
 
 ---
@@ -107,34 +103,6 @@ const phoneNumber = "6285975296363"; // Replace with your admin number
 
 ---
 
-## 📁 Project Structure
-
-```
-padelplay/
-├── src/
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── booking/[id]/      # Dynamic booking page
-│   │   ├── courts/            # Courts listing page
-│   │   └── page.tsx           # Homepage
-│   ├── components/            # Reusable React components
-│   │   ├── Navbar.tsx         # Navigation bar
-│   │   ├── Hero.tsx           # Hero section
-│   │   ├── Features.tsx       # Features showcase
-│   │   ├── HowItWorks.tsx     # Process explanation
-│   │   ├── FAQ.tsx            # Frequently asked questions
-│   │   └── Footer.tsx         # Footer component
-│   ├── context/               # React Context providers
-│   │   └── AuthContext.tsx    # Authentication context
-│   └── lib/                   # Utility functions
-│       └── supabase.ts        # Supabase client
-├── public/                    # Static assets
-│   └── image/                 # Court images
-├── .env.local                 # Environment variables (not in repo)
-└── package.json               # Dependencies
-```
-
----
-
 ## 🎨 Design Philosophy
 
 PadelPlay follows a **premium, sport-focused design** with:
@@ -170,7 +138,6 @@ npm run lint
 - **TypeScript**: Type-safe development
 - **Tailwind CSS 4**: Utility-first styling with custom configuration
 - **Framer Motion**: Declarative animations
-- **Supabase**: Backend-as-a-Service for authentication
 
 ---
 
