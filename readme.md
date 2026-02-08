@@ -24,10 +24,7 @@
 - **Comprehensive Messages**: Includes customer name, court, date, time, add-ons, and total price
 - **No Payment Gateway**: Simplified booking flow with payment confirmation via WhatsApp
 
-### 🔐 Authentication (Optional)
-- **Supabase Auth**: Secure user authentication with email/password
-- **User Profiles**: Avatar support and personalized user menu
-- **Guest Booking**: Book courts without creating an account
+Book courts without creating an account
 
 ---
 
@@ -38,7 +35,6 @@
 - **Styling**: Tailwind CSS 4
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Authentication**: Supabase
 - **Deployment**: Vercel-ready
 
 ---
@@ -65,20 +61,12 @@
    pnpm install
    ```
 
-3. **Configure environment variables**
-   
-   Create a `.env.local` file in the root directory:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   ```
-
-4. **Run the development server**
+3. **Run the development server**
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
    
    Navigate to [http://localhost:3000](http://localhost:3000)
 
@@ -103,34 +91,6 @@ Update the admin WhatsApp number in `src/app/booking/[id]/page.tsx`:
 
 ```typescript
 const phoneNumber = "6285975296363"; // Replace with your admin number
-```
-
----
-
-## 📁 Project Structure
-
-```
-padelplay/
-├── src/
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── booking/[id]/      # Dynamic booking page
-│   │   ├── courts/            # Courts listing page
-│   │   └── page.tsx           # Homepage
-│   ├── components/            # Reusable React components
-│   │   ├── Navbar.tsx         # Navigation bar
-│   │   ├── Hero.tsx           # Hero section
-│   │   ├── Features.tsx       # Features showcase
-│   │   ├── HowItWorks.tsx     # Process explanation
-│   │   ├── FAQ.tsx            # Frequently asked questions
-│   │   └── Footer.tsx         # Footer component
-│   ├── context/               # React Context providers
-│   │   └── AuthContext.tsx    # Authentication context
-│   └── lib/                   # Utility functions
-│       └── supabase.ts        # Supabase client
-├── public/                    # Static assets
-│   └── image/                 # Court images
-├── .env.local                 # Environment variables (not in repo)
-└── package.json               # Dependencies
 ```
 
 ---
@@ -170,7 +130,6 @@ npm run lint
 - **TypeScript**: Type-safe development
 - **Tailwind CSS 4**: Utility-first styling with custom configuration
 - **Framer Motion**: Declarative animations
-- **Supabase**: Backend-as-a-Service for authentication
 
 ---
 
