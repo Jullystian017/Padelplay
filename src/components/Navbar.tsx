@@ -1,36 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Menu, LogOut, User as UserIcon, ChevronDown, Settings, Calendar } from "lucide-react";
+import { ArrowUpRight, Menu } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import AuthModal from "./AuthModal";
-import { useAuth } from "@/context/AuthContext";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-    const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-    const { user, signOut } = useAuth();
-    const menuRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
 
-        const handleClickOutside = (event: MouseEvent) => {
-            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-                setIsUserMenuOpen(false);
-            }
-        };
-
         window.addEventListener("scroll", handleScroll);
-        document.addEventListener("mousedown", handleClickOutside);
         return () => {
             window.removeEventListener("scroll", handleScroll);
-            document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
 
@@ -57,59 +42,6 @@ export default function Navbar() {
 
             {/* Right: Actions */}
             <div className="flex items-center gap-3 md:gap-6">
-                {user ? (
-                    <div className="relative" ref={menuRef}>
-                        <button
-                            onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                            className="flex items-center gap-2 group"
-                        >
-                            <div className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden relative group-hover:border-padel-neon/50 transition-colors">
-                                {user.user_metadata.avatar_url ? (
-                                    <Image src={user.user_metadata.avatar_url} alt="Avatar" fill className="object-cover" />
-                                ) : (
-                                    <UserIcon className="w-5 h-5 text-white/20 group-hover:text-padel-neon transition-colors" />
-                                )}
-                            </div>
-                            <ChevronDown className={`w-4 h-4 text-white/20 group-hover:text-white transition-all duration-300 ${isUserMenuOpen ? "rotate-180" : ""}`} />
-                        </button>
-
-                        <AnimatePresence>
-                            {isUserMenuOpen && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                    className="absolute right-0 mt-4 w-64 bg-[#0c1222] border border-white/10 rounded-[2rem] p-3 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl overflow-hidden"
-                                >
-                                    <div className="px-4 py-3 border-b border-white/5 mb-2">
-                                        <p className="text-[10px] uppercase tracking-widest font-black text-white/20 mb-1">Logged in as</p>
-                                        <p className="text-sm font-bold text-white truncate">{user.email}</p>
-                                    </div>
-
-                                    <div className="space-y-1">
-                                        <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-white/60 hover:text-white hover:bg-white/5 transition-all text-sm group">
-                                            <Calendar className="w-4 h-4 group-hover:text-padel-neon" />
-                                            Bookings
-                                        </button>
-                                    </div>
-
-                                    <div className="mt-2 pt-2 border-t border-white/5">
-                                        <button
-                                            onClick={() => {
-                                                signOut();
-                                                setIsUserMenuOpen(false);
-                                            }}
-                                            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-400 hover:text-red-300 hover:bg-red-500/5 transition-all text-sm group"
-                                        >
-                                            <LogOut className="w-4 h-4" />
-                                            Sign Out
-                                        </button>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                ) : null}
 
                 <Link
                     href="/courts"
@@ -121,7 +53,6 @@ export default function Navbar() {
                 </Link>
             </div>
 
-            <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
         </nav>
     );
 }

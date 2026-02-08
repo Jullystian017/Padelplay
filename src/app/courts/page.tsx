@@ -7,8 +7,6 @@ import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Shield, Wind, Zap, MapPin, ArrowUpRight } from "lucide-react";
-import AuthModal from "@/components/AuthModal";
-import { useAuth } from "@/context/AuthContext";
 
 const courts = [
     {
@@ -45,9 +43,7 @@ const courts = [
 
 export default function CourtsPage() {
     const [filter, setFilter] = useState("All");
-    const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
     const router = useRouter();
-    const { user } = useAuth();
 
     const filteredCourts = filter === "All"
         ? courts
@@ -147,7 +143,6 @@ export default function CourtsPage() {
                 </div>
             </section>
 
-            <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
             <Footer />
         </main>
     );

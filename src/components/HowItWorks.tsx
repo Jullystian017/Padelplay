@@ -9,13 +9,13 @@ const steps = [
         number: "01",
         title: "Select Your Court",
         description: "Explore our premium panoramic courts across prime Jakarta locations. Filter by court type and surface preference.",
-        image: "https://images.unsplash.com/photo-1646649853703-7645147474ba?q=80&w=1200",
+        image: "/image/pexels-khezez-34079410.jpg",
     },
     {
         number: "02",
         title: "Book & Pay Securely",
         description: "Choose your preferred time slot and complete your booking with our integrated secure payment gateway.",
-        image: "https://images.unsplash.com/photo-1542744173-8e7e5381c60c?q=80&w=1200",
+        image: "https://images.unsplash.com/photo-1509017174183-0b7e0278f1ec?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         number: "03",
@@ -27,7 +27,7 @@ const steps = [
         number: "04",
         title: "Start Playing",
         description: "Show up at the court, scan your code, and enjoy the ultimate pro-grade padel experience with your team.",
-        image: "https://images.unsplash.com/photo-1626248685124-5f7548bb994d?q=80&w=1200",
+        image: "/image/man-playing-padel (1).jpg",
     }
 ];
 

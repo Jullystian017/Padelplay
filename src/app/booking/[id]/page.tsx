@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Calendar as CalendarIcon, Clock, Users, Shield, MapPin, ChevronRight, CheckCircle2, Zap } from "lucide-react";
-import { useAuth } from "@/context/AuthContext";
 import Image from "next/image";
 
 // Placeholder data - in a real app this would come from Supabase
@@ -50,7 +49,6 @@ const addonsList = [
 export default function BookingPage() {
     const { id } = useParams();
     const router = useRouter();
-    const { user, loading: authLoading } = useAuth();
 
     // Generate dates for the selector (Next 14 days starting from today)
     const [availableDates] = useState(() => {
