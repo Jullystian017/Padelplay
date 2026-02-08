@@ -61,20 +61,12 @@ Book courts without creating an account
    pnpm install
    ```
 
-3. **Configure environment variables**
-   
-   Create a `.env.local` file in the root directory:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   ```
-
-4. **Run the development server**
+3. **Run the development server**
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
    
    Navigate to [http://localhost:3000](http://localhost:3000)
 
