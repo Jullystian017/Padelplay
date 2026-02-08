@@ -15,6 +15,9 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "PadelPlay | Modern Padel Court Booking",
   description: "Experience the future of padel booking and community in one sleek platform.",
+  verification: {
+    google: "wu0zOztUnUR9ZRjQyj9gXk2Az-HQZ",
+  },
 };
 
 export default function RootLayout({
