@@ -40,6 +40,7 @@ export default function FAQ() {
                             <button
                                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                                 className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                                suppressHydrationWarning
                             >
                                 <span className="font-bold text-lg">{faq.question}</span>
                                 <ChevronDown className={`w-5 h-5 text-padel-neon transition-transform duration-300 ${activeIndex === index ? "rotate-180" : ""}`} />

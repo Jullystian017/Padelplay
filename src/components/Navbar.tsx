@@ -48,8 +48,8 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* Center: Logo (Shifted slightly right) */}
-            <div className="absolute left-1/2 md:left-[53%] -track-tighter -translate-x-1/2">
+            {/* Center: Logo */}
+            <div className="absolute left-1/2 -translate-x-1/2">
                 <Link href="/" className="text-xl md:text-2xl font-black text-white flex items-center gap-1 drop-shadow-[0_0_30px_rgba(0,0,0,1)]">
                     PADEL<span className="text-padel-neon italic font-light">PLAY</span>
                 </Link>
@@ -109,14 +109,7 @@ export default function Navbar() {
                             )}
                         </AnimatePresence>
                     </div>
-                ) : (
-                    <button
-                        onClick={() => setIsAuthModalOpen(true)}
-                        className="text-[11px] font-black uppercase tracking-widest text-white hover:text-padel-neon transition-colors hidden sm:block"
-                    >
-                        Sign In
-                    </button>
-                )}
+                ) : null}
 
                 <Link
                     href="/courts"

@@ -54,11 +54,7 @@ export default function CourtsPage() {
         : courts.filter(c => c.type === filter);
 
     const handleBooking = (courtId: number) => {
-        if (!user) {
-            setIsAuthModalOpen(true);
-        } else {
-            router.push(`/booking/${courtId}`);
-        }
+        router.push(`/booking/${courtId}`);
     };
 
     return (
